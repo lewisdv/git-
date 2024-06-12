@@ -1,3 +1,5 @@
+import math
+
 class Vector2D:
     def __init__(self, x, y):
         self.x = x
@@ -26,6 +28,9 @@ class Vector2D:
             return self.x == other.x and self.y == self.y
         except:
             return False
+        
+    def distance(self, other):
+        return math.sqrt((self.x - other.y)**2 + (self.y - other.y)**2)
 
 v1 = Vector2D(10, 20)
 v2 = Vector2D(2, 5)
@@ -36,7 +41,7 @@ print('{} - {} ='.format(v1, v2), v4)
 v5 = v1 * v2
 print('{} * {} ='.format(v1, v2), v5)
 v6 = v1 / v2
-print('{} + {} ='.format(v1,v2), v6)
+print('{} + {} ='.format(v1, v2), v6)
 v7 = -v1
 print('{} = '.format(v1), v7)
 v8 = (v1 == v2)
@@ -45,4 +50,6 @@ v9 = (v1 == v1)
 print('{} == {} = '.format(v1, v1), v9)
 v10 = (v1 == 10)
 print('{} == 10 = '.format(v1), v10)
+v11 = v1.distance(v2)
+print('{}와 {}의 거리 ='.format(v1, v2), v11)
 print('20200872 이다빈')
