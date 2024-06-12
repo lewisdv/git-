@@ -45,9 +45,17 @@ class Line2D:
     def __len__(self):
         return int(self.__a.distance(self.__b))
 
+    def __eq__ (self,other):
+            try:
+                return self.__a == other.a and self.__b == other.b
+            except:
+                return False
+
+v0 = Vector2D(7, 13)
 v1 = Vector2D(10, 20)
 v2 = Vector2D(2, 5)
 l1 = Line2D(v1, v2)
+l2 = Line2D(v0, v1)
 v3 = v1 + v2
 print('{} + {} ='.format(v1, v2), v3)
 v4 = v1 - v2
@@ -67,4 +75,6 @@ print('{} == 10 = '.format(v1), v10)
 v11 = v1.distance(v2)
 print('{}와 {}의 거리 ='.format(v1, v2), v11)
 print('l1의 길이: ', len(l1))
+v12 = (l1 == l2) 
+print('{} = {} = '.format(l1, l2), v12)
 print('20200872 이다빈')
