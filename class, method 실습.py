@@ -50,6 +50,21 @@ class Line2D:
                 return self.__a == other.a and self.__b == other.b
             except:
                 return False
+            
+    def length(self):
+        return self.__a.distance(self.__b)
+    
+    def __lt__(self, other):
+        return self.length() < other.length()
+    
+    def __gt__(self, other):
+        return self.length() > other.length()
+    
+    def __le__(self, other):
+        return self.length() <= other.length()
+    
+    def __ge__(self, other):
+        return self.length() >= other.length()
 
 v0 = Vector2D(7, 13)
 v1 = Vector2D(10, 20)
@@ -77,4 +92,8 @@ print('{}와 {}의 거리 ='.format(v1, v2), v11)
 print('l1의 길이: ', len(l1))
 v12 = (l1 == l2) 
 print('{} = {} = '.format(l1, l2), v12)
+print('{} < {} = '.format(l1, l2), l1 < l2)
+print('{} > {} = '.format(l1, l2), l1 > l2)
+print('{} <= {} = '.format(l1, l2), l1 <= l2)
+print('{} >= {} = '.format(l1, l2), l1 >= l2)
 print('20200872 이다빈')
