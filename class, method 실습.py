@@ -32,6 +32,13 @@ class Vector2D:
     def distance(self, other):
         return math.sqrt((self.x - other.y)**2 + (self.y - other.y)**2)
 
+class Line2D:
+    def __init__(self, a, b):
+        if not isinstance(a, Vector2D) or not isinstance(b, Vector2D):
+            raise TypeError
+        self.__a = a
+        self.__b = b
+
 v1 = Vector2D(10, 20)
 v2 = Vector2D(2, 5)
 v3 = v1 + v2
