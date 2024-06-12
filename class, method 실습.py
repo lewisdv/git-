@@ -38,6 +38,9 @@ class Line2D:
             raise TypeError
         self.__a = a
         self.__b = b
+    
+    def __str__(self):
+        return "{} - {}".format(self.__a, self.__b)
 
 v1 = Vector2D(10, 20)
 v2 = Vector2D(2, 5)
